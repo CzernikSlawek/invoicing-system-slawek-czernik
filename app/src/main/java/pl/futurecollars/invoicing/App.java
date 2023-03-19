@@ -4,11 +4,11 @@
 
 package pl.futurecollars.invoicing;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
+import java.util.Optional;
+import pl.futurecollars.invoicing.db.Database;
+import pl.futurecollars.invoicing.db.FileDatabase;
 import pl.futurecollars.invoicing.model.Invoice;
-import pl.futurecollars.invoicing.utils.TextUtils;
 
 public class App {
 
@@ -20,11 +20,20 @@ public class App {
 
     System.out.println(new App().getGreeting());
 
-    List<Invoice> invoices = new ArrayList<>();
+    Database database = new FileDatabase();
 
-    Invoice invoice1 = new Invoice(1L, LocalDateTime.now(), "c1", "c2");
+    Invoice invoice = Invoice.builder()
+        .buyer("buyer comapny etc.")
+        .seller("seller company inc.")
+        .date(LocalDate.now())
+        .build();
 
-    String upperCaseText = TextUtils.capitalizeText("text");
+    database.save(invoice);
+
+    Optional<Invoice> invoiceFromDb = database.getById(123);
+
+    System.out.println(invoiceFromDb);
+
   }
 
 }
