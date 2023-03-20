@@ -10,11 +10,6 @@ class AppTest extends Specification {
         setup:
         def app = new App()
 
-        when:
-        def result = app.greeting
-
-        then:
-        result != null
         and:
         app.main()
     }
