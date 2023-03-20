@@ -1,11 +1,10 @@
-package pl.futurecollars.invoicing.db.memory;
+package pl.futurecollars.invoicing.memory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import pl.futurecollars.invoicing.db.Database;
 import pl.futurecollars.invoicing.model.Invoice;
 
 public class InMemoryDatabase implements Database {
@@ -14,7 +13,7 @@ public class InMemoryDatabase implements Database {
   private int nextId = 1;
 
   @Override
-  public int save(Invoice invoice) {
+  public String save(Invoice invoice) {
     invoice.setId(String.valueOf(nextId));
     invoices.put(nextId, invoice);
 

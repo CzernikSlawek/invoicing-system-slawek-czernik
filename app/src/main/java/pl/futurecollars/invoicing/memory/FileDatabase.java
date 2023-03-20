@@ -1,4 +1,4 @@
-package pl.futurecollars.invoicing.db;
+package pl.futurecollars.invoicing.memory;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +16,7 @@ public class FileDatabase implements Database {
   }
 
   @Override
-  public int save(Invoice invoice) {
+  public String save(Invoice invoice) {
     String uuid = UUID.randomUUID().toString();
     invoice.setId(uuid);
     fileService.writeDataToFile(Configuration.DB_FILE_NAME, invoice);

@@ -1,4 +1,4 @@
-package pl.futurecollars.invoicing.db;
+package pl.futurecollars.invoicing.memory;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,7 @@ import pl.futurecollars.invoicing.model.Invoice;
 
 public interface Database {
 
-  int save(Invoice invoice);
+  String save(Invoice invoice);
 
   Optional<Invoice> getById(int id);
 

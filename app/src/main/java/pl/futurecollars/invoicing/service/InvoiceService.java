@@ -2,7 +2,7 @@ package pl.futurecollars.invoicing.service;
 
 import java.util.List;
 import java.util.Optional;
-import pl.futurecollars.invoicing.db.Database;
+import pl.futurecollars.invoicing.memory.Database;
 import pl.futurecollars.invoicing.model.Invoice;
 
 public class InvoiceService {
@@ -13,7 +13,7 @@ public class InvoiceService {
     this.database = database;
   }
 
-  public int save(Invoice invoice) {
+  public String save(Invoice invoice) {
     return database.save(invoice);
   }
 
