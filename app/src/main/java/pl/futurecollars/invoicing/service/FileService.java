@@ -40,9 +40,9 @@ public class FileService {
     }
   }
 
-  public Object getDataFromFiles(String filename, Class T) {
+  public Object getDataFromFiles(String filename, Class t) {
     try {
-      return objectMapper.readValue(new File(filename), T);
+      return objectMapper.readValue(new File(filename), t);
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
