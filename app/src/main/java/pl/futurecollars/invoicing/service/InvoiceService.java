@@ -2,7 +2,7 @@ package pl.futurecollars.invoicing.service;
 
 import java.util.List;
 import java.util.Optional;
-import pl.futurecollars.invoicing.memory.Database;
+import pl.futurecollars.invoicing.db.Database;
 import pl.futurecollars.invoicing.model.Invoice;
 
 public class InvoiceService {
@@ -13,12 +13,12 @@ public class InvoiceService {
     this.database = database;
   }
 
-  public String save(Invoice invoice) {
+  public int save(Invoice invoice) {
     return database.save(invoice);
   }
 
-  public Optional<Optional<Invoice>> getById(int id) {
-    return Optional.ofNullable(database.getById(id));
+  public Optional<Invoice> getById(int id) {
+    return database.getById(id);
   }
 
   public List<Invoice> getAll() {
@@ -32,4 +32,5 @@ public class InvoiceService {
   public void delete(int id) {
     database.delete(id);
   }
+
 }

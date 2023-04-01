@@ -1,4 +1,4 @@
-package pl.futurecollars.invoicing.memory;
+package pl.futurecollars.invoicing.db.file;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
+import pl.futurecollars.invoicing.db.Database;
 import pl.futurecollars.invoicing.model.Invoice;
 import pl.futurecollars.invoicing.utils.FilesService;
 import pl.futurecollars.invoicing.utils.JsonService;
@@ -19,7 +20,7 @@ public class FileBasedDatabase implements Database {
   private final JsonService jsonService;
 
   @Override
-  public String save(Invoice invoice) {
+  public int save(Invoice invoice) {
     try {
       invoice.setId(idService.getNextIdAndIncreament());
       filesService.appendLineToFile(databasePath, jsonService.toJson(invoice));
@@ -68,7 +69,7 @@ public class FileBasedDatabase implements Database {
         throw new IllegalArgumentException("Id " + id + " does not exist");
       }
 
-      updatedInvoice.setId(String.valueOf(id));
+      updatedInvoice.setId(id);
       listWithoutInvoiceWithGivenId.add(jsonService.toJson(updatedInvoice));
 
       filesService.writeLinesToFile(databasePath, listWithoutInvoiceWithGivenId);

@@ -1,4 +1,4 @@
-package pl.futurecollars.invoicing.memory;
+package pl.futurecollars.invoicing.db.file;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -29,7 +29,7 @@ public class IdService {
 
   }
 
-  public String getNextIdAndIncreament() {
+  public int getNextIdAndIncreament() {
     try {
       filesService.writeToFile(idFilePath, String.valueOf(nextId + 1));
       return nextId++;
