@@ -79,7 +79,6 @@ class InvoiceServiceIntegrationTest extends Specification {
         int id = service.save(originalInvoice)
 
         when:
-        service.update(id, invoices.get(1))
         def result = service.update(id, invoices.get(1))
 
         then:
