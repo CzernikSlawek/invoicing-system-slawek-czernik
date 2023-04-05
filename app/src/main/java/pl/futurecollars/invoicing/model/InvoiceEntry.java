@@ -17,3 +17,4 @@ public class InvoiceEntry {
   private Vat vatRate;
 
 }
+
