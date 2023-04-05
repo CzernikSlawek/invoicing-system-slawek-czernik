@@ -23,3 +23,4 @@ class TestHelpers {
         new Invoice(LocalDate.now(), company(id), company(id), List.of(product(id)));
     }
 }
+
