@@ -6,7 +6,6 @@ import pl.futurecollars.invoicing.db.Database;
 import pl.futurecollars.invoicing.model.Invoice;
 
 public class InvoiceService {
-
   private final Database database;
 
   public InvoiceService(Database database) {
@@ -27,10 +26,12 @@ public class InvoiceService {
 
   public Optional<Invoice> update(int id, Invoice updatedInvoice) {
     return database.update(id, updatedInvoice);
-
-    public Optional<Invoice> delete(int id){
-      return database.delete(id);
-
-    }
   }
+
+  public Optional<Invoice> delete(int id) {
+    return database.delete(id);
+  }
+
 }
+
+
