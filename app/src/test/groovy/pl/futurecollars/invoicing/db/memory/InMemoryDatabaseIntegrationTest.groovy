@@ -10,3 +10,4 @@ class InMemoryDatabaseIntegrationTest extends AbstractDatabaseTest {
         return new InMemoryDatabase()
     }
 }
+
