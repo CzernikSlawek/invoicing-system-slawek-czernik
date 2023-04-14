@@ -13,6 +13,6 @@ logging:
       springframework:
         boot: INFO
     pl:
-      futurecollars:
+      future-collars:
         invoicing: INFO
         invoicing.db: DEBUG
