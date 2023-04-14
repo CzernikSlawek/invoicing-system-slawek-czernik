@@ -5,7 +5,3 @@ invoicing-system:
   database: memory
   dbPath:
 
-spring:
-  mvc:
-    path match:
-      matching-strategy: ant_path_matcher
