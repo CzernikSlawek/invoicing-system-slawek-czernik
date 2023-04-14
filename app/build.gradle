@@ -11,6 +11,8 @@ buildscript {
         lombokVersion = '1.18.24'
         spockVersion = '2.0-groovy-3.0'
         springBootVersion = '2.7.8'
+        springFoxStarterVersion = '3.0.0'
+        springFoxUiVersion = '3.0.0'
         springDependencyManagmentVersion = '1.1.0'
         groovyVersion = '3.0.9'
         fasterxmlVersion = '2.11.1'
@@ -53,13 +55,15 @@ dependencies {
 
     // This dependency is used by the application.
     implementation "com.google.guava:guava:30.1.1-jre"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "io.springfox:springfox-boot-starter:${springFoxStarterVersion}"
+    implementation "io.springfox:springfox-swagger-ui:${springFoxUiVersion}"
 
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
-    implementation "org.springframework.boot:spring-boot-starter-web"
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     implementation "com.fasterxml.jackson.core:jackson-databind:${fasterxmlVersion}"
     implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${fasterxmlVersion}"
