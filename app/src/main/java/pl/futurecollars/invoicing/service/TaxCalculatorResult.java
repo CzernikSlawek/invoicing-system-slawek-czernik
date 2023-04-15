@@ -19,3 +19,4 @@ public class TaxCalculatorResult {
   private final BigDecimal vatToReturn;
 
 }
+
