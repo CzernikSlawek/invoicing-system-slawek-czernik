@@ -28,7 +28,7 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
-
+    id 'java'
     id 'checkstyle'
     id 'jacoco'
     id 'codenarc'
@@ -89,7 +89,7 @@ checkstyle {
 }
 
 codenarcTest {
-    configFile = file('config/codenarc.groovy/codenarc.groovy.groovy')
+    configFile = file('config/codenarc/codenarc.groovy')
     maxPriority1Violations = 0
     maxPriority2Violations = 0
     maxPriority3Violations = 999
