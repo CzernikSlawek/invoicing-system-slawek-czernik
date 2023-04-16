@@ -9,13 +9,14 @@ import spock.lang.Specification
 class InvoiceApplicationTest extends Specification {
 
     @Autowired
-    private InvoiceService invoiceService;
+    private InvoiceService invoiceService
 
     def "invoice service is created"() {
         expect:
         invoiceService
     }
 }
+
 
 
 
