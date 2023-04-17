@@ -1,4 +1,4 @@
-package pl.futurecollars.invoicing.controller;
+package pl.futurecollars.invoicing.controller.invoice;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -37,5 +37,6 @@ public interface InvoiceApi {
   @PutMapping("/{id}")
   ResponseEntity<?> update(@PathVariable int id, @RequestBody Invoice invoice);
 }
+
 
 
