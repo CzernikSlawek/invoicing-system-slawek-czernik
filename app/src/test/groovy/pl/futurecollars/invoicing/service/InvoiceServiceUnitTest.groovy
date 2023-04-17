@@ -13,7 +13,7 @@ class InvoiceServiceUnitTest extends Specification {
 
     def setup() {
         database = Mock()
-        service = new InvoiceService(database);
+        service = new InvoiceService(database)
     }
 
     def "calling save() should delegate to database save() method"() {
@@ -59,6 +59,7 @@ class InvoiceServiceUnitTest extends Specification {
         1 * database.update(invoice.getId(), invoice)
     }
 }
+
 
 
 
