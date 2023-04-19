@@ -101,7 +101,7 @@ public class FileBasedDatabase implements Database {
   }
 
   private boolean containsId(String line, int id) {
-    return line.contains("\"id\":" + id + ",");
+    return line.contains("{\"id\":" + id + ",\"number\""); // now multiple objects has id, but only invoice has number
   }
 }
 
