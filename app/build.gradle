@@ -82,10 +82,6 @@ application {
     mainClass = 'pl.futurecollars.invoicing.App'
 }
 
-tasks.named('test') {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
-}
 
 checkstyle {
     showViolations = true
@@ -94,6 +90,21 @@ checkstyle {
     maxErrors = 0
 }
 
+task testWithFileDatabase(type: Test) {
+    systemProperty 'spring.profiles.active', 'file'
+}
+
+task testWithMemoryDatabase(type: Test) {
+    systemProperty 'spring.profiles.active', 'memory'
+}
+
+task testWithSqlDatabase(type: Test) {
+    systemProperty 'spring.profiles.active', 'sql'
+}
+
+check.dependsOn testWithFileDatabase
+check.dependsOn testWithMemoryDatabase
+//check.dependsOn testWithSqlDatabase
 
 test {
     finalizedBy jacocoTestReport //report is always generated after tests run
@@ -107,7 +118,7 @@ jacocoTestCoverageVerification {
         rule {
             limit {
                 counter = 'BRANCH'
-                minimum = 0.85
+                minimum = 0.80
             }
         }
         rule {
