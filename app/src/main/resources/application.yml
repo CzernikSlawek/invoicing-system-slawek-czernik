@@ -2,10 +2,6 @@ server:
   port: 7777
 
 
-invoicing-system:
-  database: memory
-
-
 logging:
   level:
     org:
@@ -17,8 +13,9 @@ logging:
         invoicing.db: DEBUG
 
 spring:
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
+  profiles:
+    active: memory
+  flyway:
+    enabled: false
 
 

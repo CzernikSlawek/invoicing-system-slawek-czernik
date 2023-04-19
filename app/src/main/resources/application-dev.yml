@@ -3,7 +3,7 @@ server:
 
 invoicing-system:
   database: memory
-  dbPath:
+
 
 
 
