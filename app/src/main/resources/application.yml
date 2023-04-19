@@ -1,11 +1,10 @@
 server:
   port: 7777
 
+
 invoicing-system:
-  database: file
-  database.directory: db
-  database.invoices.file: invoices.txt
-  database.id.file: id.txt
+  database: memory
+
 
 logging:
   level:
@@ -21,4 +20,5 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
 
