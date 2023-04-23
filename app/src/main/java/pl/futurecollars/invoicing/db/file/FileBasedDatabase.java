@@ -11,7 +11,6 @@ import pl.futurecollars.invoicing.model.Invoice;
 import pl.futurecollars.invoicing.utils.FilesService;
 import pl.futurecollars.invoicing.utils.JsonService;
 
-
 @AllArgsConstructor
 public class FileBasedDatabase implements Database {
   private final Path databasePath;
