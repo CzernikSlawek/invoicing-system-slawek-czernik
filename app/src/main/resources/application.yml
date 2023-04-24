@@ -1,24 +1,16 @@
 server:
-  port: 7777
+  port: 6666
 
-
-logging:
-  level:
-    org:
-      springframework:
-        boot: INFO
-    pl:
-      future-collars:
-        invoicing: INFO
-        invoicing.db: DEBUG
+invoicing-system:
+  database:
+    type: file
+    dbPath: invoices.json
 
 spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-  profiles:
-    active: memory
-  flyway:
-    enabled: false
-
-
+      profiles:
+        active: memory
+      flyway:
+        enabled: false

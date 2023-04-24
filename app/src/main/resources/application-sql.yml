@@ -2,7 +2,10 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/invoicing
     username: postgres
-    password: czornyslawko1908
+    password: postgres
     driver-class-name: org.postgresql.Driver
   flyway:
     enabled: true
+
+invoicing-system:
+  database: memory

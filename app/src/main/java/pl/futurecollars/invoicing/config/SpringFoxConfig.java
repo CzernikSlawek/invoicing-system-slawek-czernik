@@ -1,6 +1,5 @@
 package pl.futurecollars.invoicing.config;
 
-import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -12,7 +11,6 @@ import springfox.documentation.service.Tag;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
-@AllArgsConstructor
 @Configuration
 public class SpringFoxConfig {
 
@@ -20,7 +18,7 @@ public class SpringFoxConfig {
   public Docket docket() {
     return new Docket(DocumentationType.SWAGGER_2)
         .select()
-        .apis(RequestHandlerSelectors.basePackage("pl.futurecollars"))
+        .apis(RequestHandlerSelectors.basePackage("pl.future-collars"))
         .paths(PathSelectors.any())
         .build()
         .tags(
@@ -34,12 +32,12 @@ public class SpringFoxConfig {
     return new ApiInfoBuilder()
         .description("Application to manage set of invoices")
         .license("No license available - private!")
-        .title("Private Invoicing")
+        .title("Private Invoicing system")
         .contact(
             new Contact(
-                "Piotr Kolacz",
-                "https://passionatesoftwareengineer.com",
-                "piotr@passionatesoftwareengineer.com")
+                "Slawek Czernik",
+                "https://google.com",
+                "czernik.slawomir2@gmail.com")
         )
         .build();
   }

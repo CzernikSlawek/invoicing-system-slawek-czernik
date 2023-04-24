@@ -1,0 +1,17 @@
+server:
+  port: 7777
+
+  invoicing-system:
+    database:
+      type: memory
+
+logging:
+  level:
+    org:
+      springframework:
+        boot: INFO
+    pl:
+      future-collars:
+        invoicing: INFO
+        invoicing.db: DEBUG
+
