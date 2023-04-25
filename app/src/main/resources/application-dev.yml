@@ -1,9 +1,9 @@
 server:
   port: 7777
 
-  invoicing-system:
-    database:
-      type: memory
+invoicing-system:
+ database: memory
+
 
 logging:
   level:
