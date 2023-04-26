@@ -4,6 +4,14 @@ server:
 invoicing-system:
  database: memory
 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/invoicing
+    username: postgres
+    password: czornyslawko1908
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
 
 logging:
   level:
