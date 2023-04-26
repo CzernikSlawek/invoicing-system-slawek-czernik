@@ -1,4 +1,4 @@
 
 
 invoicing-system:
-  database: memory
+  database: sql
