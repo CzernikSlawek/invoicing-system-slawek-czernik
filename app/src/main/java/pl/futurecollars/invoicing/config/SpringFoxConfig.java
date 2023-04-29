@@ -32,16 +32,18 @@ public class SpringFoxConfig {
     return new ApiInfoBuilder()
         .description("Application to manage set of invoices")
         .license("No license available - private!")
-        .title("Private Invoicing")
+        .title("Private Invoicing system")
         .contact(
             new Contact(
-                "Piotr Kolacz",
-                "https://passionatesoftwareengineer.com",
-                "piotr@passionatesoftwareengineer.com")
+                "Slawek Czernik",
+                "https://google.com",
+                "czernik.slawomir2@gmail.com")
         )
         .build();
   }
 }
+
+
 
 
 

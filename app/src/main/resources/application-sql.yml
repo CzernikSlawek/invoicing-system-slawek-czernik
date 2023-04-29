@@ -1,0 +1,4 @@
+
+
+invoicing-system:
+  database: memory

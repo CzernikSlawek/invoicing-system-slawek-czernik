@@ -1,23 +1,15 @@
 server:
-  port: 7777
+  port: 6666
+
 
 invoicing-system:
-  database: file
-  database.directory: db
-  database.invoices.file: invoices.txt
-  database.id.file: id.txt
+  database:
+    type: memory
 
-logging:
-  level:
-    org:
-      springframework:
-        boot: INFO
-    pl:
-      future-collars:
-        invoicing: INFO
-        invoicing.db: DEBUG
 
 spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  flyway:
+    enabled: false
