@@ -19,7 +19,7 @@ import pl.futurecollars.invoicing.utils.JsonService;
 public class DatabaseConfiguration {
 
   @Bean
-  @ConditionalOnProperty(name = "invoicing-system.database", havingValue = "file")
+  @ConditionalOnProperty(name = "invoicing-system.database.type", havingValue = "file")
   public IdProvider idProvider(
       FilesService filesService,
       @Value("${invoicing-system.database.directory}") String databaseDirectory,
@@ -31,7 +31,7 @@ public class DatabaseConfiguration {
   }
 
   @Bean
-  @ConditionalOnProperty(name = "invoicing-system.database", havingValue = "file")
+  @ConditionalOnProperty(name = "invoicing-system.database.type", havingValue = "file")
   public Database fileBasedDatabase(
       IdProvider idProvider,
       FilesService filesService,
@@ -45,7 +45,7 @@ public class DatabaseConfiguration {
   }
 
   @Bean
-  @ConditionalOnProperty(name = "invoicing-system.database", havingValue = "memory")
+  @ConditionalOnProperty(name = "invoicing-system.database.type", havingValue = "memory")
   public Database inMemoryDatabase() {
     log.debug("inmemoryDatabase()");
     return new InMemoryDatabase();
